@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: tchardat <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/04/13 15:52:41 by tchardat          #+#    #+#              #
+#    Updated: 2020/04/13 15:52:57 by tchardat         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 
 SRC_PATH = srcs
@@ -13,7 +25,7 @@ SRC_NAME = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c		\
 		ft_putstr.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c	\
 		ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c\
 		ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_isspace.c ft_get_next_line.c\
-		ft_getnbr.c ft_linecount.c ft_linelen.c ft_sort_empty_column.c
+		ft_getnbr.c ft_linecount.c ft_linelen.c
 
 OBJ_PATH = objs
 OBJ_NAME = $(SRC_NAME:.c=.o)

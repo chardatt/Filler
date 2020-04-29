@@ -6,14 +6,14 @@
 #    By: tchardat <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/04 09:00:06 by tchardat          #+#    #+#              #
-#    Updated: 2020/03/04 09:00:16 by tchardat         ###   ########.fr        #
+#    Updated: 2020/04/12 14:05:11 by tchardat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = filler
 
 SRC_PATH = srcs
-SRC_NAME = main.c hook.c mandelbrot.c julia.c tools.c burningship.c
+SRC_NAME = main.c
 
 OBJ_PATH = objs
 OBJ_NAME = $(SRC_NAME:.c=.o)
@@ -23,7 +23,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 CPPFLAGS = -I includes -I libft/includes
 
-LDFLAGS = -L libft
+LDFLAGS = -L libft/
 LDLIBS = -I minilibx_macos/ -lft -lm -L minilibx_macos/ -lmlx -framework OpenGL -framework AppKit
 
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
@@ -32,24 +32,24 @@ OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@make -C libft
-	@$(CC) $(LDFLAGS) $^ -o $@
-	@echo "Compilation of Fractol:	\033[1;32mOK\033[m"
+	make -C libft
+	$(CC) $(LDFLAGS) $^ -o $@
+	@echo "Compilation of Filler:	\033[1;32mOK\033[m"
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) $(CFLAGS) -c $< $(CPPFLAGS) -o $@
+	$(CC) $(CFLAGS) -c $< $(CPPFLAGS) -o $@
 
 clean:
 	@make -C libft clean
 	@rm -f $(OBJ)
 	@rmdir $(OBJ_PATH) 2> /dev/null || true
-	@echo "Fractol: Removing Objs"
+	@echo "Filler: Removing Objs"
 
 fclean: clean
 	@make -C libft fclean
 	@rm -f $(NAME)
-	@echo "Fractol : Removing Fractol"
+	@echo "Filler : Removing Filler"
 
 re: fclean all
 

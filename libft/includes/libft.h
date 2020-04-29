@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/04/13 21:44:05 by tchardat          #+#    #+#             */
+/*   Updated: 2020/04/28 20:31:18 by tchardat         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
-# define BUFF_SIZE 8
+# define BUFF_SIZE 1
 # include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -77,6 +89,5 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_get_next_line(const int fd, char **line);
 int					ft_linecount(char *str);
 void				ft_printtab(char **tab);
-char				**ft_sort_empty_column(char **tab);
-char				*ft_suppr_char(char *str, int j);
+
 #endif
