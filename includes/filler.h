@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/20 17:24:34 by tchardat          #+#    #+#             */
-/*   Updated: 2020/04/29 16:53:02 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/05/25 17:48:57 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 # define FILLER_H
 #include "../libft/includes/libft.h"
 #include <stdlib.h>
-#include <stdio.h>
+#include <fcntl.h>
 
 typedef struct	s_data
 {
 	int		height;
 	int		width;
 	int		playernum;
+	int		x;
+	int		y;
 	char	letter;
+	char	*line;
+	char	**map;
 }				t_data;
 
 typedef struct	s_piece
@@ -30,11 +34,13 @@ typedef struct	s_piece
 	int		widthpiece;
 	int		x;
 	int		y;
+	int		v_h;
 	char	*piece;
-	char	*workedp;
 }				t_piece;
 
-char	*ft_sort(t_piece piece);
-t_piece	*read_piece(t_piece *piece);
-char	**player1(t_data *data, t_piece *piece);
+char	*ft_sort_line(t_piece piece);
+char	*ft_sort_column(t_piece piece);
+t_piece	*read_piece(t_piece *piece, t_data *data);
+char	*player1(t_data *data, t_piece *piece);
+t_data	*read_map(t_data *data);
 #endif

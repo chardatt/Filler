@@ -6,36 +6,66 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/17 17:18:16 by tchardat          #+#    #+#             */
-/*   Updated: 2020/04/29 16:58:51 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/05/25 17:43:52 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
 
-t_piece	*take_piece(t_piece *piece);
-
-t_piece	*read_piece(t_piece *piece)
+int		v_piece(t_piece piece)
 {
-	char	*line = "MERDE";
+	int	i;
+	int j;
+	int count;
+	int max;
 
-	while (line[0] != 'P')
+	max = 0;
+	count = 0;
+	i = 0;
+	j = piece.widthpiece + 1;
+	while (piece.piece[i])
 	{
-//		ft_putchar_fd('a', 2);
-		ft_get_next_line(0, &line);
+		if (piece.piece[i] == '*')
+		{
+			while (piece.piece[i + j] == '*')
+			{
+				j += piece.widthpiece + 1;
+				count++;
+			}
+			if (max < count)
+				max = count;
+		}
+		i++;
 	}
-//	ft_putchar_fd('a', 2);
-	piece->heightpiece = ft_atoi(&line[6]);
-	piece->widthpiece =	ft_atoi(&line[8]);
-	ft_putnbr_fd(piece->heightpiece, 2);
-	ft_putchar_fd('\n', 2);
-	ft_putnbr_fd(piece->widthpiece, 2);
-	ft_putchar_fd('\n', 2);
-	ft_putchar_fd('\n', 2);
-	take_piece(piece);
-	piece->workedp = ft_sort(*piece);
-	ft_putstr_fd(piece->workedp, 2);
-	ft_putchar_fd('\n', 2);
-	return (piece);
+	return (max);
+}
+
+int		v_h_piece(t_piece piece)
+{
+	int	i;
+	int	h;
+	int	j;
+	int v;
+
+	i = 0;
+	j = 0;
+	h = 0;
+	while (piece.piece[i])
+	{
+		if (piece.piece[i] != '*')
+		{
+			if (h > j)
+				j = h;
+			h = 0;
+		}
+		if (piece.piece[i] == '*')
+			h++;
+		i++;
+	}
+	v = v_piece(piece);
+	if (j > v)
+		return (0);
+	return (1);
 }
 
 t_piece	*take_piece(t_piece *piece)
@@ -56,7 +86,32 @@ t_piece	*take_piece(t_piece *piece)
 		piece->piece = ft_strjoin(piece->piece, endline);
 		i--;
 	}
+	return (piece);
+}
+
+t_piece	*read_piece(t_piece *piece, t_data *data)
+{
+	while (data->line[0] != 'P')
+	{
+		ft_putchar_fd('a', 2);
+		ft_get_next_line(0, &data->line);
+	}
+//	ft_putchar_fd('a', 2);
+	piece->heightpiece = ft_atoi(&data->line[6]);
+	piece->widthpiece =	ft_atoi(&data->line[8]);
+	ft_putnbr_fd(piece->heightpiece, 2);
 	ft_putchar_fd('\n', 2);
+	ft_putnbr_fd(piece->widthpiece, 2);
+	ft_putchar_fd('\n', 2);
+	ft_putchar_fd('\n', 2);
+	take_piece(piece);
 	ft_putstr_fd(piece->piece, 2);
+	ft_putchar_fd('\n', 2);
+/*	piece->v_h = v_h_piece(*piece);
+	ft_putchar_fd('\n', 2);
+	ft_putchar_fd('\n', 2);
+	ft_putnbr_fd(piece->v_h, 2);
+	ft_putchar_fd('\n', 2);
+	ft_putchar_fd('\n', 2);*/
 	return (piece);
 }

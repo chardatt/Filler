@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_triage.c                                        :+:      :+:    :+:   */
+/*   ft_sort_line.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 16:46:31 by tchardat          #+#    #+#             */
-/*   Updated: 2020/04/29 17:28:55 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/05/05 16:01:10 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,33 @@ char	*destroy_lline(t_piece piece, int dstr)
 	return (str);
 }
 
-char	*ft_sort(t_piece piece)
+char	*ft_sort_line2(t_piece piece, int dstr, int first, int block, int i)
+{
+	while (piece.piece[i])
+	{
+		if (piece.piece[i] == '*')
+			block = 1;
+		if (block == 1)
+			first = 1;
+		if (piece.piece[i] == '\n')
+		{
+			if (block == 0)
+			{
+				ft_putnbr_fd(first, 2);
+				if (first == 0)
+					piece.workedp = destroy_fline(piece, dstr);
+				if (first == 1)
+					piece.workedp = destroy_lline(piece, dstr);
+				dstr = 1;
+			}
+			block = 0;
+		}
+		i++;
+	}
+	return (piece.workedp);
+}
+
+char	*ft_sort_line(t_piece piece)
 {
 	int		i;
 	int		block;
@@ -63,7 +89,8 @@ char	*ft_sort(t_piece piece)
 	first = 0;
 	block = 0;
 	i = 0;
-	while (piece.piece[i])
+	piece.workedp = ft_sort_line2(piece, dstr, first, block, i);
+/*	while (piece.piece[i])
 	{
 		if (piece.piece[i] == '*')
 			block = 1;
@@ -82,7 +109,7 @@ char	*ft_sort(t_piece piece)
 			block = 0;
 		}
 		i++;
-	}
+	}*/
 	if (piece.workedp == NULL)
 		return (piece.piece);
 	return (piece.workedp);

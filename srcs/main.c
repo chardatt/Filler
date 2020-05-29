@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 16:47:52 by tchardat          #+#    #+#             */
-/*   Updated: 2020/04/29 17:09:05 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/05/29 16:10:56 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_get_h_and_w(t_data *data)
 
 	ft_get_next_line(0, &line);
 	data->height = ft_atoi(&line[8]);
-data->width = ft_atoi(&line[11]);
+	data->width = ft_atoi(&line[11]);
 }
 
 void	ft_get_info(t_data *data)
@@ -53,14 +53,17 @@ static void		init_struct(t_data *data, t_piece *piece)
 	piece->widthpiece = 0;
 	piece->x = 0;
 	piece->y = 0;
-	piece->workedp = NULL;
+	piece->v_h = 0;
 }
 
 int		main(void)
 {
-	t_data data;
+	t_data	data;
 	t_piece	piece;
+	char	*ret;
+	int	i;
 
+	i = 0;
 	init_struct(&data, &piece);
 	ft_get_info(&data);
 	/*ft_putnbr_fd(data.playernum, 2);
@@ -70,6 +73,16 @@ int		main(void)
 	ft_putnbr_fd(data.width, 2);
 	ft_putchar_fd('\n', 2);*/
 //	ft_putchar_fd('a', 2);
-		player1(&data, &piece);
-	write(0, "0 0\n", 4);
+/*	while (1)
+	{
+		if (i == 0)
+		{*/
+			i++;
+			ret = player1(&data, &piece);
+			write(2, ret, 7);
+			ft_putchar_fd(data.letter, 2);
+			ft_putendl(ret);
+//		}
+//	}
+	return (1);
 }

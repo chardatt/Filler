@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 21:34:00 by tchardat          #+#    #+#             */
-/*   Updated: 2020/04/13 21:34:01 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/05/25 15:47:39 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	ft_printtab(char **tab)
 	{
 		while (tab[i])
 		{
-			ft_putendl(tab[i]);
+			ft_putstr_fd(tab[i], 2);
+			ft_putchar_fd('\n', 2);
 			i++;
 		}
 	}
