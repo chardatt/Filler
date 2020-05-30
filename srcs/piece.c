@@ -6,13 +6,13 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/17 17:18:16 by tchardat          #+#    #+#             */
-/*   Updated: 2020/05/25 17:43:52 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/05/30 21:38:42 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
 
-int		v_piece(t_piece piece)
+/*int		v_piece(t_piece piece)
 {
 	int	i;
 	int j;
@@ -66,25 +66,34 @@ int		v_h_piece(t_piece piece)
 	if (j > v)
 		return (0);
 	return (1);
-}
+}*/
 
 t_piece	*take_piece(t_piece *piece)
 {
 	char	*line;
-	char	*endline;
+//	char	*endline;
 	int		i;
 
-	endline = "\n\0";
+//	endline = "\n\0";
+	piece->x = 0;
 	i = piece->heightpiece;
+	if (!(piece->piece = malloc(sizeof(char*) * piece->heightpiece + 1)))
+		return (NULL);
+	piece->piece[piece->heightpiece + 1] = "\0";
 	while (i)
 	{
+//		ft_putchar_fd('a', 2);
 		ft_get_next_line(0, &line);
-		if (i == piece->heightpiece)
+		if (!(piece->piece[piece->x] = malloc(sizeof(char) * piece->widthpiece + 1)))
+			return (NULL);
+		piece->piece[piece->x] = line;
+		piece->x++;
+/*		if (i == piece->heightpiece)
 			piece->piece = line;
 		else
 			piece->piece = ft_strjoin(piece->piece, line);
 		piece->piece = ft_strjoin(piece->piece, endline);
-		i--;
+*/		i--;
 	}
 	return (piece);
 }
@@ -105,8 +114,9 @@ t_piece	*read_piece(t_piece *piece, t_data *data)
 	ft_putchar_fd('\n', 2);
 	ft_putchar_fd('\n', 2);
 	take_piece(piece);
-	ft_putstr_fd(piece->piece, 2);
+	ft_printtab(piece->piece);
 	ft_putchar_fd('\n', 2);
+	ft_putchar_fd('b', 2);
 /*	piece->v_h = v_h_piece(*piece);
 	ft_putchar_fd('\n', 2);
 	ft_putchar_fd('\n', 2);
