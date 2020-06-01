@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/20 17:24:34 by tchardat          #+#    #+#             */
-/*   Updated: 2020/05/30 21:27:22 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/06/01 16:14:52 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct	s_piece
 	int		y;
 	int		h;
 	int		v;
-	int		v_h;
+	char	v_h;
 	char	**piece;
 }				t_piece;
 

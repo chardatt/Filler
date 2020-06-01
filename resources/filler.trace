@@ -1,6 +1,4 @@
-seed = 4073
-O: error on input
-./a.out: Segfault at 0
+seed = 9859
 ./a.out won
 Score:
-0AGAINST1
+1AGAINST1

@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/17 17:18:16 by tchardat          #+#    #+#             */
-/*   Updated: 2020/05/30 21:38:42 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/06/01 16:32:53 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ t_piece	*read_piece(t_piece *piece, t_data *data)
 	ft_putchar_fd('\n', 2);
 	ft_putchar_fd('\n', 2);
 	take_piece(piece);
-	ft_printtab(piece->piece);
+//	ft_printtab(piece->piece);
 	ft_putchar_fd('\n', 2);
 	ft_putchar_fd('b', 2);
 /*	piece->v_h = v_h_piece(*piece);

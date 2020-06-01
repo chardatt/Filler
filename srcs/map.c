@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 17:26:32 by tchardat          #+#    #+#             */
-/*   Updated: 2020/05/25 17:37:01 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/06/01 17:08:17 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_data	*read_map(t_data *data)
 		}
 		j++;
 	}
-	ft_printtab(ret);
+//	ft_printtab(ret);
 	data->map = ret;
 	ft_putnbr_fd(j, 2);
 	ft_putchar_fd('\n', 2);
