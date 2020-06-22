@@ -6,11 +6,63 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/17 17:18:16 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/01 16:32:53 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/06/22 17:45:56 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
+
+int		take_piece_left(t_data *data, t_piece *piece)
+{
+	piece->y = 0;
+	while (piece->y < piece->heightpiece)
+	{
+		piece->x = 0;
+		while (piece->x < piece->widthpiece)
+		{
+			if (piece->piece[piece->y][piece->x] == '*')
+			{
+				if (ft_look_for_place(data, piece))
+				{
+					ft_putnbr(data->y - piece->y);
+					ft_putchar(' ');
+					ft_putnbr(data->x - piece->x);
+					ft_putchar('\n');
+					return (1);
+				}
+			}
+			piece->x++;
+		}
+		piece->y++;
+	}
+	return (0);
+}
+
+int		take_piece_right(t_data *data, t_piece *piece)
+{
+	piece->y = piece->heightpiece - 1;
+	while (piece->y >= 0)
+	{
+		piece->x = piece->widthpiece - 1;
+		while (piece->x >= 0)
+		{
+			if (piece->piece[piece->y][piece->x] == '*')
+			{
+				if (ft_look_for_place(data, piece))
+				{
+					ft_putnbr(data->y - piece->y);
+					ft_putchar(' ');
+					ft_putnbr(data->x - piece->x);
+					ft_putchar('\n');
+					return (1);
+				}
+			}
+			piece->x--;
+		}
+		piece->y--;
+	}
+	return (0);
+}
 
 /*int		v_piece(t_piece piece)
 {
