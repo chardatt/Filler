@@ -6,13 +6,13 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/17 17:07:32 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/22 17:25:01 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/06/23 16:42:46 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
 
-void	check_v(t_piece	*piece)
+/*void	check_v(t_piece	*piece)
 {
 	int	block;
 
@@ -20,15 +20,15 @@ void	check_v(t_piece	*piece)
 	piece->y = 0;
 	while (piece->piece[piece->y][piece->x])
 	{
-/*		ft_putchar_fd('\n', 2);
+		ft_putchar_fd('\n', 2);
 		ft_putchar_fd('c', 2);
-		ft_putchar_fd('\n', 2);*/
+		ft_putchar_fd('\n', 2);
 		block = 0;
 		while (piece->piece[piece->y] && piece->y < piece->heightpiece)
 		{
-/*			ft_putchar_fd('\n', 2);
+			ft_putchar_fd('\n', 2);
 			ft_putchar_fd('z', 2);
-			ft_putchar_fd('\n', 2);*/
+			ft_putchar_fd('\n', 2);
 			if (piece->piece[piece->y][piece->x] == '*')
 				block++;
 			if (piece->piece[piece->y][piece->x] == '.')
@@ -37,8 +37,8 @@ void	check_v(t_piece	*piece)
 					piece->v = block;
 				block = 0;
 			}
-/*			ft_putchar_fd('\n', 2);
-			ft_putchar_fd('z', 2);*/
+			ft_putchar_fd('\n', 2);
+			ft_putchar_fd('z', 2);
 			piece->y++;
 //			ft_putchar_fd('z', 2);
 		}
@@ -100,7 +100,7 @@ void	check_h(t_piece *piece)
 //	ft_putnbr_fd(piece->h, 2);
 //	ft_putchar_fd('\n', 2);
 //	ft_putchar_fd('\n', 2);
-}
+}*/
 
 /* TAF A FAIRE SUR PLACE PIECE
 ** Le rendre modulable pour continuer la partie normalement en fonction du player
@@ -207,32 +207,9 @@ int		player1(t_data *data, t_piece *piece)
 {
 	char	*ret;
 
-	
-	ft_putchar_fd('a', 2);
-	ft_putchar_fd('\n', 2);
-//	ft_get_h_and_w(data);
-	ft_putchar_fd('b', 2);
-	ft_putchar_fd('\n', 2);
 	data = read_map(data);
-	ft_putchar_fd('c', 2);
-	ft_putchar_fd('\n', 2);
 	piece = read_piece(piece, data);
-	ft_putchar_fd('d', 2);
-	ft_putchar_fd('\n', 2);
-	ft_putchar_fd(data->letter, 2);
-	ft_putchar_fd('\n', 2);
-	/*ret = */
 	if (place_piece(data, piece) == -1)
 		return (-1);
-/*	ft_putchar_fd('a', 2);
-	ft_putnbr_fd(piece->heightpiece, 2);
-	ft_putchar_fd('a', 2);
-	ft_putchar_fd('\n', 2);
-	ft_putchar_fd('a', 2);
-	ft_putnbr_fd(piece->widthpiece, 2);
-	ft_putchar_fd('a', 2);
-	ft_putchar_fd('\n', 2);
-	ft_putchar_fd('a', 2);*/
-//	return (ret);
 	return (0);
 }

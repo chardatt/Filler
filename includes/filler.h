@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/20 17:24:34 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/22 17:46:45 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/06/23 16:02:19 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,11 @@ typedef struct	s_data
 	int		first;
 	int		x;
 	int		y;
-	int		aggr;
+	int		ft;
+	int		fd;
+	int		fl;
+	int		fr;
+//	int		aggr;
 	char	letter;
 	char	*line;
 	char	**map;
@@ -36,11 +40,11 @@ typedef struct	s_piece
 	int		widthpiece;
 	int		x;
 	int		y;
-	int		xadd;
-	int		yadd;
-	int		h;
-	int		v;
-	char	v_h;
+//	int		xadd;
+//	int		yadd;
+//	int		h;
+//	int		v;
+//	char	v_h;
 	char	**piece;
 }				t_piece;
 
@@ -58,4 +62,5 @@ int		ft_strategy(t_data *data, t_piece *piece);
 int		take_piece_right(t_data *data, t_piece *piece);
 int		first_height(t_data *data, char c);
 int		take_piece_left(t_data *data, t_piece *piece);
+int		last_column(t_data *data, char c);
 #endif

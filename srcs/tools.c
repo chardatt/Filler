@@ -6,11 +6,25 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 16:32:53 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/22 19:58:57 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/06/23 15:39:36 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
+
+int	last_column(t_data *data, char c)
+{
+	int	y;
+	int x;
+
+	x = data->width - 1;
+	y = 0;
+	while (data->map[x][y] != c && y < data->height)
+		y++;
+	if (y == data->height)
+		return (0);
+	return (1);
+}
 
 int	first_height(t_data *data, char c)
 {
