@@ -6,51 +6,38 @@
 #    By: tchardat <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/04 09:00:06 by tchardat          #+#    #+#              #
-#    Updated: 2020/04/12 14:05:11 by tchardat         ###   ########.fr        #
+#    Updated: 2020/06/23 22:49:06 by tchardat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = filler
 
-SRC_PATH = srcs
-SRC_NAME = main.c
-
-OBJ_PATH = objs
-OBJ_NAME = $(SRC_NAME:.c=.o)
-
 CC = clang
-CFLAGS = -Wall -Werror -Wextra
 
-CPPFLAGS = -I includes -I libft/includes
+CFLAGS = -Wall -Wextra -Werror
 
-LDFLAGS = -L libft/
-LDLIBS = -I minilibx_macos/ -lft -lm -L minilibx_macos/ -lmlx -framework OpenGL -framework AppKit
+RM = rm -f
 
-SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
-OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
+SRC = main.c look_for_place.c ft_strategy.c map.c \
+piece.c player1.c reset.c tools.c
 
-all: $(NAME)
+OBJ = $(SRC:.c=.o)
 
-$(NAME): $(OBJ)
-	make -C libft
-	$(CC) $(LDFLAGS) $^ -o $@
-	@echo "Compilation of Filler:	\033[1;32mOK\033[m"
+$(NAME) :
+	make -C libft/ fclean && make -C libft/
+	$(CC) $(CFLAGS) -c $(SRC)
+	$(CC) $(CFLAGS) $(OBJ) libft/libft.a -o filler
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	$(CC) $(CFLAGS) -c $< $(CPPFLAGS) -o $@
+all : $(NAME)
 
-clean:
-	@make -C libft clean
-	@rm -f $(OBJ)
-	@rmdir $(OBJ_PATH) 2> /dev/null || true
-	@echo "Filler: Removing Objs"
+clean :
+	$(RM) $(OBJ)
+	make -C libft/ clean
 
-fclean: clean
-	@make -C libft fclean
-	@rm -f $(NAME)
-	@echo "Filler : Removing Filler"
+fclean : clean
+	make -C libft/ fclean
+	$(RM) $(NAME)
 
-re: fclean all
+re : fclean all
 
-.PHONY: all clean fclean re
+.PHONY : all clean fclean re

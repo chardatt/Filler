@@ -6,42 +6,22 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/19 15:05:35 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/22 17:46:28 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/06/23 22:50:19 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
-
-/* Problème sur superpose_adverse
-** return 0, pourquoi? à régler sinon ne doit pas être posé.
-*/
+#include "includes/filler.h"
 
 int		check_place(t_data *data, t_piece *piece, int x, int y)
 {
-//	ft_putnbr_fd(data->widht, 2);
 	if (x > data->width || x < 0)
-	{
-		ft_putchar_fd('W', 2);
 		return (0);
-	}
-//	ft_putnbr_fd(data->widht, 2);
 	if (y > data->height || y < 0)
-	{
-		ft_putchar_fd('V', 2);
 		return (0);
-	}
-//	ft_putnbr_fd(data->widht, 2);
 	if (x + piece->widthpiece > data->width)
-	{
-		ft_putchar_fd('U', 2);
 		return (0);
-	}
-//	ft_putnbr_fd(data->widht, 2);
 	if (y + piece->heightpiece > data->height)
-	{
-		ft_putchar_fd('T', 2);
 		return (0);
-	}
 	return (1);
 }
 
@@ -111,19 +91,10 @@ int		ft_look_for_place(t_data *data, t_piece *piece)
 	x = data->x - piece->x;
 	y = data->y - piece->y;
 	if (check_place(data, piece, x, y) == 0)
-	{
-		ft_putchar_fd('5', 2);
 		return (0);
-	}
 	if (check_superpose(data, piece, x, y) == 0)
-	{
-		ft_putchar_fd('6', 2);
 		return (0);
-	}
 	if (check_superpose_adverse(data, piece, x, y) == 0)
-	{
-		ft_putchar_fd('7', 2);
 		return (0);
-	}
 	return (1);
 }
