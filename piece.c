@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/17 17:18:16 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/23 22:50:49 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/06/30 16:36:51 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ t_piece	*take_piece(t_piece *piece)
 {
 	char	*line;
 	int		i;
+	int		x;
 
 	piece->x = 0;
 	i = piece->heightpiece;
@@ -76,8 +77,9 @@ t_piece	*take_piece(t_piece *piece)
 	piece->piece[piece->heightpiece + 1] = "\0";
 	while (i)
 	{
+		malx = piece->x;
 		ft_get_next_line(0, &line);
-		if (!(piece->piece[piece->x] = malloc(sizeof(char) * piece->widthpiece + 1)))
+		if (!(piece->piece[x] = malloc(sizeof(char) * piece->widthpiece + 1)))
 			return (NULL);
 		piece->piece[piece->x] = line;
 		piece->x++;
@@ -91,7 +93,7 @@ t_piece	*read_piece(t_piece *piece, t_data *data)
 	while (data->line[0] != 'P')
 		ft_get_next_line(0, &data->line);
 	piece->heightpiece = ft_atoi(&data->line[6]);
-	piece->widthpiece =	ft_atoi(&data->line[8]);
+	piece->widthpiece = ft_atoi(&data->line[8]);
 	take_piece(piece);
 	return (piece);
 }
