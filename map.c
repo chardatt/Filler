@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 17:26:32 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/23 22:50:39 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/06/30 16:24:41 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,10 @@ t_data	*read_map(t_data *data)
 		if (j > 0)
 			if (!(ret[j - 1] = malloc(sizeof(char*) * data->width)))
 				return (NULL);
-		i = 4;
+		i = 3;
 		data->x = 0;
-		while (j >= 1 && data->line[i])
-		{
-			ret[j - 1][data->x] = data->line[i];
-			data->x++;
-			i++;
-		}
+		while (j >= 1 && data->line[i++])
+			ret[j - 1][data->x++] = data->line[i];
 		j++;
 	}
 	data->map = ret;
