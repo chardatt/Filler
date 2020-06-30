@@ -6,15 +6,15 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/20 17:24:34 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/23 16:02:19 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/06/30 16:40:50 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLER_H
 # define FILLER_H
-#include "../libft/includes/libft.h"
-#include <stdlib.h>
-#include <fcntl.h>
+#include	"../libft/includes/libft.h"
+#include	<stdlib.h>
+#include	<fcntl.h>
 
 typedef struct	s_data
 {
@@ -28,7 +28,6 @@ typedef struct	s_data
 	int		fd;
 	int		fl;
 	int		fr;
-//	int		aggr;
 	char	letter;
 	char	*line;
 	char	**map;
@@ -40,11 +39,6 @@ typedef struct	s_piece
 	int		widthpiece;
 	int		x;
 	int		y;
-//	int		xadd;
-//	int		yadd;
-//	int		h;
-//	int		v;
-//	char	v_h;
 	char	**piece;
 }				t_piece;
 
