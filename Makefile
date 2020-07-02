@@ -6,7 +6,7 @@
 #    By: tchardat <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/04 09:00:06 by tchardat          #+#    #+#              #
-#    Updated: 2020/06/23 22:49:06 by tchardat         ###   ########.fr        #
+#    Updated: 2020/07/02 15:12:50 by tchardat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 SRC = main.c look_for_place.c ft_strategy.c map.c \
-piece.c player1.c reset.c tools.c
+piece.c player1.c reset.c tools.c player2.c
 
 OBJ = $(SRC:.c=.o)
 
