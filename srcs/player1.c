@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reset.c                                            :+:      :+:    :+:   */
+/*   player1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/18 13:53:26 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/23 22:51:05 by tchardat         ###   ########.fr       */
+/*   Created: 2020/04/17 17:07:32 by tchardat          #+#    #+#             */
+/*   Updated: 2020/07/06 19:30:19 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/filler.h"
+#include "../includes/filler.h"
 
-void	reset_piece(t_piece *piece)
+int		place_piece(t_data *data, t_piece *piece)
 {
-	piece->heightpiece = 0;
-	piece->widthpiece = 0;
-	piece->x = 0;
-	piece->y = 0;
-	piece->piece = NULL;
+	if (ft_strategy(data, piece) == -1)
+		return (-1);
+	return (0);
 }
 
-void	reset_data(t_data *data)
+int		player1(t_data *data, t_piece *piece)
 {
-	data->x = 0;
-	data->y = 0;
-	data->map = NULL;
+	data = read_map(data);
+	piece = read_piece(piece, data);
+	if (place_piece(data, piece) == -1)
+		return (-1);
+	return (0);
 }

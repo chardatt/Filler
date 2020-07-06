@@ -6,11 +6,11 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 17:26:32 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/30 16:24:41 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/07/06 19:29:55 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/filler.h"
+#include "../includes/filler.h"
 
 t_data	*read_map(t_data *data)
 {

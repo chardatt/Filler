@@ -6,11 +6,11 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 16:47:52 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/23 22:50:26 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/07/06 19:29:41 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/filler.h"
+#include "../includes/filler.h"
 
 void	ft_get_numplayer(t_data *data)
 {

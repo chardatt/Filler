@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.c                                            :+:      :+:    :+:   */
+/*   reset.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/22 16:32:53 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/23 22:51:12 by tchardat         ###   ########.fr       */
+/*   Created: 2020/06/18 13:53:26 by tchardat          #+#    #+#             */
+/*   Updated: 2020/07/06 19:30:42 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/filler.h"
+#include "../includes/filler.h"
 
-int	first_height(t_data *data, char c)
+void	reset_piece(t_piece *piece)
 {
-	int y;
-	int x;
+	piece->heightpiece = 0;
+	piece->widthpiece = 0;
+	piece->x = 0;
+	piece->y = 0;
+	piece->piece = NULL;
+}
 
-	y = 0;
-	x = 0;
-	while (data->map[y])
-	{
-		x = 0;
-		while (data->map[y][x])
-		{
-			x++;
-			if (data->map[y][x] == ft_tolower(c) || data->map[y][x] == c)
-				return (y);
-		}
-		y++;
-	}
-	return (y);
+void	reset_data(t_data *data)
+{
+	data->x = 0;
+	data->y = 0;
+	data->map = NULL;
 }

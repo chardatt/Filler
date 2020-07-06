@@ -6,11 +6,11 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/19 15:05:35 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/23 22:50:19 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/07/06 19:29:16 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/filler.h"
+#include "../includes/filler.h"
 
 int		check_place(t_data *data, t_piece *piece, int x, int y)
 {

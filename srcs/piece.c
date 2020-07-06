@@ -6,11 +6,11 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/17 17:18:16 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/30 17:00:29 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/07/06 19:30:06 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/filler.h"
+#include "../includes/filler.h"
 
 int		take_piece_left(t_data *data, t_piece *piece)
 {

@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   player1.c                                          :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/17 17:07:32 by tchardat          #+#    #+#             */
-/*   Updated: 2020/06/23 22:50:57 by tchardat         ###   ########.fr       */
+/*   Created: 2020/06/22 16:32:53 by tchardat          #+#    #+#             */
+/*   Updated: 2020/07/06 19:30:53 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/filler.h"
+#include "../includes/filler.h"
 
-int		place_piece(t_data *data, t_piece *piece)
+int	first_height(t_data *data, char c)
 {
-	if (ft_strategy(data, piece) == -1)
-		return (-1);
-	return (0);
-}
+	int y;
+	int x;
 
-int		player1(t_data *data, t_piece *piece)
-{
-	data = read_map(data);
-	piece = read_piece(piece, data);
-	if (place_piece(data, piece) == -1)
-		return (-1);
-	return (0);
+	y = 0;
+	x = 0;
+	while (data->map[y])
+	{
+		x = 0;
+		while (data->map[y][x])
+		{
+			x++;
+			if (data->map[y][x] == ft_tolower(c) || data->map[y][x] == c)
+				return (y);
+		}
+		y++;
+	}
+	return (y);
 }
