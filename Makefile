@@ -5,44 +5,48 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tchardat <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/03/04 09:00:06 by tchardat          #+#    #+#              #
-#    Updated: 2020/07/06 19:28:24 by tchardat         ###   ########.fr        #
+#    Created: 2020/04/13 15:52:41 by tchardat          #+#    #+#              #
+#    Updated: 2020/07/06 20:19:49 by tchardat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = tchardat.filler
 
-CC = clang
-
-CFLAGS = -Wall -Wextra -Werror
-
-RM = rm -f
-
 SRC_PATH = srcs
-SRC_NAME = main.c look_for_place.c ft_strategy.c map.c \
-piece.c player1.c reset.c tools.c player2.c
+SRC_NAME = main.c look_for_place.c ft_strategy.c map.c piece.c player1.c \
+			reset.c tools.c player2.c
 
 OBJ_PATH = objs
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
+CC = clang
+CFLAGS = -Wall -Werror -Wextra
+
+CPPFLAGS = -I includes
+
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
 
-$(NAME) :
+all: $(NAME)
+
+$(NAME): $(OBJ)
 	make -C libft/ fclean && make -C libft/
-	$(CC) $(CFLAGS) -c $(SRC)
 	$(CC) $(CFLAGS) $(OBJ) libft/libft.a -o $(NAME)
+	@echo "Compilation of Filler:	\033[1;32mOK\033[m"
 
-all : $(NAME)
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
+	@$(CC) $(CFLAGS) -c $< $(CPPFLAGS) -o $@
 
-clean :
-	$(RM) $(OBJ)
-	make -C libft/ clean
+clean:
+	@rm -f $(OBJ)
+	@rmdir $(OBJ_PATH) 2> /dev/null || true
+	@echo "Filler: Removing Objs"
 
-fclean : clean
-	make -C libft/ fclean
-	$(RM) $(NAME)
+fclean: clean
+	@rm -f $(NAME)
+	@echo "Filler: Removing tchardat.Filler"
 
-re : fclean all
+re: fclean all
 
-.PHONY : all clean fclean re
+.PHONY: all, clean, fclean, re
