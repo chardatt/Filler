@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 16:32:06 by tchardat          #+#    #+#             */
-/*   Updated: 2020/07/06 20:24:03 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/07/14 14:15:27 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		place_right(t_data *data, t_piece *piece)
 {
 	data->x = data->width - 1;
 	data->y = data->height - 1;
-	while (data->map[data->y][data->x])
+	while (data->x >= 0)
 	{
 		while (data->y >= 0)
 		{
@@ -73,13 +73,13 @@ int		place_down(t_data *data, t_piece *piece)
 int		place_top(t_data *data, t_piece *piece)
 {
 	data->y = 0;
-	while (data->map[data->y])
+	while (data->y < data->height)
 	{
 		data->x = 0;
-		while (data->map[data->y][data->x])
+		while (data->x < data->width)
 		{
 			if (data->map[data->y][data->x] == data->letter)
-				if (take_piece_left(data, piece) == 1)
+				if (take_piece_right(data, piece) == 1 || take_piece_left(data, piece))
 					return (0);
 			data->x++;
 		}

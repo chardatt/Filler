@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/20 17:24:34 by tchardat          #+#    #+#             */
-/*   Updated: 2020/07/02 18:42:48 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/07/12 18:55:49 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ typedef struct	s_data
 	int			first;
 	int			x;
 	int			y;
-	int			ft;
-	int			fd;
-	int			fl;
-	int			fr;
+	int			aggr;
 	char		letter;
 	char		*line;
 	char		**map;
@@ -39,6 +36,7 @@ typedef struct	s_piece
 	int			widthpiece;
 	int			x;
 	int			y;
+	int			count;
 	char		**piece;
 }				t_piece;
 
@@ -63,4 +61,5 @@ int				place_down(t_data *data, t_piece *piece);
 int				place_top(t_data *data, t_piece *piece);
 int				place_left(t_data *data, t_piece *piece);
 int				place_right(t_data *data, t_piece *piece);
+//int				ft_cirlce_ennemy(t_data *data, t_piece *piece);
 #endif

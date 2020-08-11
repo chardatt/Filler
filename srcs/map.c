@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 17:26:32 by tchardat          #+#    #+#             */
-/*   Updated: 2020/07/06 19:29:55 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/07/12 18:32:02 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_data	*read_map(t_data *data)
 	while (ft_get_next_line(0, &data->line) == 1 && j <= data->height)
 	{
 		if (j > 0)
-			if (!(ret[j - 1] = malloc(sizeof(char*) * data->width)))
+			if (!(ret[j - 1] = malloc(sizeof(char*) * data->width + 1)))
 				return (NULL);
 		i = 3;
 		data->x = 0;

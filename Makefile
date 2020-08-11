@@ -6,7 +6,7 @@
 #    By: tchardat <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/13 15:52:41 by tchardat          #+#    #+#              #
-#    Updated: 2020/07/06 20:19:49 by tchardat         ###   ########.fr        #
+#    Updated: 2020/07/14 13:59:18 by tchardat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ_PATH = objs
 OBJ_NAME = $(SRC_NAME:.c=.o)
 
 CC = clang
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g -fsanitize=address
 
 CPPFLAGS = -I includes
 

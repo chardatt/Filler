@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 16:47:52 by tchardat          #+#    #+#             */
-/*   Updated: 2020/07/06 19:29:41 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/07/12 18:04:29 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int		main(void)
 	t_piece	piece;
 
 	data.first = 0;
+	data.aggr = 1;
+	piece.count = 0;
 	reset_data(&data);
 	reset_piece(&piece);
 	ft_get_info(&data);

@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/17 17:18:16 by tchardat          #+#    #+#             */
-/*   Updated: 2020/07/06 19:30:06 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/07/12 18:12:34 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ t_piece	*take_piece(t_piece *piece)
 	i = piece->heightpiece;
 	if (!(piece->piece = malloc(sizeof(char*) * piece->heightpiece + 1)))
 		return (NULL);
-	piece->piece[piece->heightpiece + 1] = "\0";
 	while (i)
 	{
 		x = piece->x;
