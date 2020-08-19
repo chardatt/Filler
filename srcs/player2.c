@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 15:10:09 by tchardat          #+#    #+#             */
-/*   Updated: 2020/08/19 22:08:52 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/08/19 22:29:01 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	ft_strat102(t_data *data, t_piece *piece)
 	return (0);
 }
 
-int	ft_strat2(t_data *data, t_piece *piece)
+/*int	ft_strat2(t_data *data, t_piece *piece)
 {
 	if (data->height == 15)
 	{
@@ -167,4 +167,4 @@ int	ft_strat2(t_data *data, t_piece *piece)
 		piece->count++;
 	}
 	return (0);
-}
+}*/

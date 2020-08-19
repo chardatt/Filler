@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/20 17:24:34 by tchardat          #+#    #+#             */
-/*   Updated: 2020/08/19 20:08:02 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/08/19 22:29:45 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,9 @@ int				first_height(t_data *data, char c);
 int				take_piece_left(t_data *data, t_piece *piece);
 int				last_column(t_data *data, char c);
 int				ft_strat2(t_data *data, t_piece *piece);
+int				ft_strat200(t_data *data, t_piece *piece);
+int				ft_strat201(t_data *data, t_piece *piece);
+int				ft_strat202(t_data *data, t_piece *piece);
 int				ft_strat1(t_data *data, t_piece *piece);
 int				ft_strat101(t_data *data, t_piece *piece);
 int				ft_strat102(t_data *data, t_piece *piece);

@@ -6,7 +6,7 @@
 #    By: tchardat <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/13 15:52:41 by tchardat          #+#    #+#              #
-#    Updated: 2020/07/14 13:59:18 by tchardat         ###   ########.fr        #
+#    Updated: 2020/08/19 22:30:01 by tchardat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = tchardat.filler
 
 SRC_PATH = srcs
 SRC_NAME = main.c look_for_place.c ft_strategy.c map.c piece.c player1.c \
-			reset.c tools.c player2.c
+			reset.c tools.c player2.c player3.c
 
 OBJ_PATH = objs
 OBJ_NAME = $(SRC_NAME:.c=.o)
