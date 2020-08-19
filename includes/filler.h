@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/20 17:24:34 by tchardat          #+#    #+#             */
-/*   Updated: 2020/07/12 18:55:49 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/08/19 17:24:02 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,4 @@ int				place_down(t_data *data, t_piece *piece);
 int				place_top(t_data *data, t_piece *piece);
 int				place_left(t_data *data, t_piece *piece);
 int				place_right(t_data *data, t_piece *piece);
-//int				ft_cirlce_ennemy(t_data *data, t_piece *piece);
 #endif

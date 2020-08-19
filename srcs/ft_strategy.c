@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 16:32:06 by tchardat          #+#    #+#             */
-/*   Updated: 2020/07/14 14:15:27 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/08/19 17:24:50 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ int		place_top(t_data *data, t_piece *piece)
 		while (data->x < data->width)
 		{
 			if (data->map[data->y][data->x] == data->letter)
-				if (take_piece_right(data, piece) == 1 || take_piece_left(data, piece))
+				if (take_piece_right(data, piece) == 1
+					|| take_piece_left(data, piece))
 					return (0);
 			data->x++;
 		}
