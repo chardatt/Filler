@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/19 22:17:40 by tchardat          #+#    #+#             */
-/*   Updated: 2020/08/19 22:50:51 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/08/19 23:21:38 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,11 @@ int	ft_strat201(t_data *data, t_piece *piece)
 						return (-1);
 	}
 	else
-	{
 		if (place_left(data, piece) == -1)
 			if (place_top(data, piece) == -1)
 				if (place_down(data, piece) == -1)
 					if (place_right(data, piece) == -1)
 						return (-1);
-	}
 	piece->count++;
 	return (0);
 }
@@ -102,13 +100,11 @@ int	ft_strat202(t_data *data, t_piece *piece)
 						return (-1);
 	}
 	else
-	{
 		if (place_right(data, piece) == -1)
 			if (place_top(data, piece) == -1)
 				if (place_down(data, piece) == -1)
 					if (place_left(data, piece) == -1)
 						return (-1);
-	}
 	piece->count++;
 	return (0);
 }
