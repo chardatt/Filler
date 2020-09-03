@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 16:47:52 by tchardat          #+#    #+#             */
-/*   Updated: 2020/09/03 11:28:40 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/09/03 12:01:09 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_data	*ft_get_h_and_w(t_data *data)
 {
 	char *line;
 
-	if (ft_get_next_line(0, &line) != - 1)
+	if (ft_get_next_line(0, &line) != -1)
 		if (ft_strlen(line) == 14)
 		{
 			if (ft_isdigit(line[8]) && ft_isdigit(line[11]))
