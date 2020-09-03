@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 16:47:52 by tchardat          #+#    #+#             */
-/*   Updated: 2020/07/12 18:04:29 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/09/03 11:28:40 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ void	ft_get_numplayer(t_data *data)
 {
 	char	*line;
 
-	ft_get_next_line(0, &line);
-	data->playernum = ft_atoi(&line[10]);
+	if (ft_get_next_line(0, &line) != -1)
+		if (ft_strlen(line) == 33)
+			data->playernum = ft_atoi(&line[10]);
 }
 
 void	ft_get_letter(t_data *data)
@@ -32,9 +33,15 @@ t_data	*ft_get_h_and_w(t_data *data)
 {
 	char *line;
 
-	ft_get_next_line(0, &line);
-	data->height = ft_atoi(&line[8]);
-	data->width = ft_atoi(&line[11]);
+	if (ft_get_next_line(0, &line) != - 1)
+		if (ft_strlen(line) == 14)
+		{
+			if (ft_isdigit(line[8]) && ft_isdigit(line[11]))
+			{
+				data->height = ft_atoi(&line[8]);
+				data->width = ft_atoi(&line[11]);
+			}
+		}
 	return (data);
 }
 

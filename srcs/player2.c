@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 15:10:09 by tchardat          #+#    #+#             */
-/*   Updated: 2020/08/19 22:50:09 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/09/03 11:53:56 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	ft_strat1(t_data *data, t_piece *piece)
 {
 	if (data->height == 15)
 	{
-		ft_putchar_fd('c', 2);
 		if (place_right(data, piece) == -1)
 			if (place_top(data, piece) == -1)
 				if (place_down(data, piece) == -1)
@@ -38,7 +37,6 @@ int	ft_strat1(t_data *data, t_piece *piece)
 
 int	ft_strat101(t_data *data, t_piece *piece)
 {
-	ft_putchar_fd('a', 2);
 	if (piece->count >= 50)
 		if (place_top(data, piece) == -1)
 			if (place_left(data, piece) == -1)

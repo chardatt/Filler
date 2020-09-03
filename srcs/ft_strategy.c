@@ -6,7 +6,7 @@
 /*   By: tchardat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 16:32:06 by tchardat          #+#    #+#             */
-/*   Updated: 2020/08/19 17:24:50 by tchardat         ###   ########.fr       */
+/*   Updated: 2020/08/30 16:33:54 by tchardat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,13 +93,13 @@ int		ft_strategy(t_data *data, t_piece *piece)
 {
 	if (data->playernum == 1)
 	{
-		if (ft_strat1(data, piece) == -1)
-			return (-1);
+		if (ft_strat1(data, piece) == 0)
+			return (0);
 	}
 	else if (data->playernum == 2)
 	{
-		if (ft_strat2(data, piece) == -1)
-			return (-1);
+		if (ft_strat2(data, piece) == 0)
+			return (0);
 	}
-	return (0);
+	return (-1);
 }
